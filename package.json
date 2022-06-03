@@ -1,0 +1,35 @@
+{
+  "name": "cleye-repro",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "import": "./index.js",
+      "require": "./index.cjs"
+    }
+  },
+  "main": "./index.cjs",
+  "types": "./index.d.ts",
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --clean --onSuccess 'pnpm build:types'",
+    "build:types": "tsc --emitDeclarationOnly --declaration --declarationMap"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@tsconfig/node16-strictest-esm": "1.0.1",
+    "@types/node": "17.0.38",
+    "tsup": "6.0.1",
+    "typescript": "4.7.2"
+  },
+  "dependencies": {
+    "cleye": "1.2.0"
+  },
+  "engines": {
+    "node": ">=16"
+  },
+  "packageManager": "pnpm@7.1.7"
+}
